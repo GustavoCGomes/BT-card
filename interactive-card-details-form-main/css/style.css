@@ -128,7 +128,7 @@ input::placeholder {
 }
 
 input:focus {
-    outline-color: hsl(229, 60%, 50%);
+    outline-color: hsl(229, 60%, 38%);
 }
 
 .grid_1 {
@@ -213,7 +213,7 @@ form button {
     color: #179D5E;
 }
 
-.thanks button {
+.thank button {
     color: white;
     width: 100%;
     border-radius: 6px;
