@@ -1,8 +1,8 @@
 const cardNumber = document.getElementById("number");
 const numberInp = document.getElementById("card_number");
 
-const cardNumber = document.getElementById("number");
-const numberInp = document.getElementById("card_number");
+const cardName = document.getElementById("name");
+const nameInp = document.getElementById("card_name");
 
 const cardMonth = document.getElementById("month");
 const monthInp = document.getElementById("card_month");
@@ -22,36 +22,33 @@ function setCardNumber(e) {
     cardNumber.innerText = format(e.target.value);
 }
 function setCardName(e) {
-    cardMonth.innerText = e.target.value;
+    cardName.innerText = format(e.target.value);
 }
 function setCardMoth(e) {
-    cardMonth.innerText = e.target.value;
+    cardMonth.innerText = format(e.target.value);
 }
 function setCardYear(e) {
-    cardYear.innerText = e.target.value;
+    cardYear.innerText = format(e.target.value);
 }
 function setCardCvc(e) {
-    cardCvc.innerText = e.target.value;
-}
-function format(s) {
-    return s.toString().replace(/\d{4}(?=.)/g,, "$&");
+    cardCvc.innerText = format(e.target.value);
 }
 
 function handleSubmit(e) {
     e.preventDefault();
-    if (!nameInp.value) {
-        nameInp.classList.add("erro");
-        nameInp.parentElement.classList.add("error_message");
-    } else {
-        nameInp.classList.remove("erro");
-        nameInp.parentElement.classList.remove("error_message")
-    }
     if (!numberInp.value) {
         numberInp.classList.add("erro");
         numberInp.parentElement.classList.add("error_message");
     } else {
         numberInp.classList.remove("erro");
-        numberInp.parentElement.classList.remove("error_message")
+        numberInp.parentElement.classList.remove("error_message");
+    }
+    if (!nameInp.value) {
+        nameInp.classList.add("erro");
+        nameInp.parentElement.classList.add("error_message");
+    } else {
+        nameInp.classList.remove("erro");
+        nameInp.parentElement.classList.remove("error_message");
     }
     if (!monthInp.value) {
         monthInp.classList.add("erro");
@@ -65,19 +62,30 @@ function handleSubmit(e) {
         yearInp.parentElement.classList.add("error_message");
     } else {
         yearInp.classList.remove("erro");
-        yearInp.parentElement.classList.remove("error_message")
+        yearInp.parentElement.classList.remove("error_message");
     }
     if (!cvcInp.value) {
         cvcInp.classList.add("erro");
         cvcInp.parentElement.classList.add("error_message");
     } else {
         cvcInp.classList.remove("erro");
-        cvcInp.parentElement.classList.remove("error_message")
+        cvcInp.parentElement.classList.remove("error_message");
     }
-    if(nameInp.value&&numberInp.value&&monthInp.value&&yearInp.value&&cvcInp.value) {
-        completed.classList.remove('hidden');
-        format.classList.add('hidden')
+    if (
+        nameInp.value &&
+        numberInp.value &&
+        monthInp.value  &&
+        yearInp.value &&
+        cvcInp.value &&
+        numberInp.value.length == 16
+    ) {
+        completed.classList.remove("hidden");
+        format.classList.add("hidden");
     }
+}
+
+function format(s) {
+    return s.toString().replace(/\d{4}(?=.)/g,"$&");
 }
 
 numberInp.addEventListener("keyup", setCardNumber);
