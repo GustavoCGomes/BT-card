@@ -8,8 +8,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   
   <title>Frontend Mentor | Interactive card details form</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   
 </head>
 <body>
@@ -44,17 +42,18 @@
               <input 
                 type="text" 
                 id="card_name" 
-                placeholder="e.g. Jane Appleseed"
+                placeholder="INSERT YOUR NAME"
                 required
               />
             </div>
           <div class="grid_2">
             <label for="card_number">Card Number</label>
-            <input type="number" oninput="if(this.value.length > this.maxLength) this.value=this.value.slice(0,this.maxLength)" 
+            <input type="number" oninput="if(this.value.length > this.maxLength) this.value=this.value.slice(0,this.maxLength);" 
             minlength="16" 
             maxlength="16"
-            placeholder="e.g. 1234 56789123 0000" 
+            placeholder="1234 5678 9123 0000" 
             required
+            id="card_number"
             />
           </div>
           <div class="card_information">
@@ -82,12 +81,12 @@
               </div>
             </div>
             <div class="grid_4">
-              <label for="carda_cvc">CVC</label>
+              <label for="card_cvc">CVC</label>
               <input type="number"
               oninput="if(this.value.length > this.maxLength) this.value=this.value.slice(0,this.maxLength)"
               minlength="3"
               maxlength="3"
-              placeholder="e.g. 123"]
+              placeholder="123"]
               id="card_cvc"
               required
               >
@@ -97,7 +96,7 @@
             <button id="submit_btn" type="submit">Confirm</button>
           </div>
         </form>
-        <div class="Thank hidden">
+        <div class="thank hidden">
           <img src="images/icon-complete.svg" alt="completed">
           <h1>Thank you!</h1>
           <p>We've added your card details</p>

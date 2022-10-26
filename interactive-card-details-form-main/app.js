@@ -1,13 +1,13 @@
 const cardNumber = document.getElementById("number");
 const numberInp = document.getElementById("card_number");
 
-const cardName = document.getElementById("name");
 const nameInp = document.getElementById("card_name");
+const cardName = document.getElementById("name");
 
 const cardMonth = document.getElementById("month");
-const monthInp = document.getElementById("card_month");
-
 const cardYear = document.getElementById("year");
+
+const monthInp = document.getElementById("card_month");
 const yearInp = document.getElementById("card_year");
 
 const cardCvc = document.getElementById("cvc");
@@ -15,8 +15,8 @@ const cvcInp = document.getElementById("card_cvc");
 
 const submitBtn = document.getElementById("submit_btn");
 
-const completed = document.getElementById(".thank");
-const gorm = document.querySelector("form");
+const completed = document.querySelector(".thank");
+const form = document.querySelector("form");
 
 function setCardNumber(e) {
     cardNumber.innerText = format(e.target.value);
@@ -24,7 +24,7 @@ function setCardNumber(e) {
 function setCardName(e) {
     cardName.innerText = format(e.target.value);
 }
-function setCardMoth(e) {
+function setCardMonth(e) {
     cardMonth.innerText = format(e.target.value);
 }
 function setCardYear(e) {
@@ -36,19 +36,19 @@ function setCardCvc(e) {
 
 function handleSubmit(e) {
     e.preventDefault();
-    if (!numberInp.value) {
-        numberInp.classList.add("erro");
-        numberInp.parentElement.classList.add("error_message");
-    } else {
-        numberInp.classList.remove("erro");
-        numberInp.parentElement.classList.remove("error_message");
-    }
     if (!nameInp.value) {
         nameInp.classList.add("erro");
         nameInp.parentElement.classList.add("error_message");
     } else {
         nameInp.classList.remove("erro");
         nameInp.parentElement.classList.remove("error_message");
+    }
+    if (!numberInp.value) {
+        numberInp.classList.add("erro");
+        numberInp.parentElement.classList.add("error_message");
+    } else {
+        numberInp.classList.remove("erro");
+        numberInp.parentElement.classList.remove("error_message");
     }
     if (!monthInp.value) {
         monthInp.classList.add("erro");
@@ -79,8 +79,8 @@ function handleSubmit(e) {
         cvcInp.value &&
         numberInp.value.length == 16
     ) {
-        completed.classList.remove("hidden");
-        format.classList.add("hidden");
+        completed.classList.remove('hidden');
+        form.classList.add("hidden");
     }
 }
 
@@ -90,7 +90,7 @@ function format(s) {
 
 numberInp.addEventListener("keyup", setCardNumber);
 nameInp.addEventListener("keyup", setCardName);
-monthInp.addEventListener("keyup", setCardMoth);
+monthInp.addEventListener("keyup", setCardMonth);
 yearInp.addEventListener("keyup", setCardYear);
 cvcInp.addEventListener("keyup", setCardCvc);
 submitBtn.addEventListener("click",handleSubmit);
