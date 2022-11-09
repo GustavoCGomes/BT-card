@@ -189,8 +189,9 @@ form button {
     grid-column: 2span;
     font-size: 18px;
     height: 50px;
-    width: 335px;
+    width: 300px;
     color: white;
+    
     border-radius: 6px;
     background-color: #179D5E;
     cursor: pointer;
@@ -245,7 +246,7 @@ button:hover{
     }
 }
 
-@media screen and (max-width:767px) {
+@media screen and (max-width:899px) {
     .container {
         flex-direction: column;
     }
